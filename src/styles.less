@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+@heading_font_color : #f56342;
+@btnColor: rgb(247, 168, 143);
+@heading_size : 18px;
+@others_font : 16px;
+@font_family: Calibri;
+
+body{
+  font-family: @font_family;
+}
+.highlights{
+ color: @heading_font_color;
+ font-weight: bold;
+}
+.heading{
+  font-weight: bold;
+  font-size: @heading_size;
+  margin: 5px 0px;
+  font-style: oblique;
+  text-transform: uppercase;
+}
+.sub_heading{
+  font-size: @others_font;
+}
+.image{
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.content{
+  font-size: @others_font;
+}
+.row{
+  margin: 25px 0px;
+  border-radius: 10px;
+  padding: 5px;
+}
+input, textarea{
+  border: none;
+  outline: none;
+  // border-bottom: 1px solid lightgrey;
+  border-radius: 10px;
+  padding: 5px;
+  min-width: 80%;
+  max-width: 90%;
+  cursor: pointer;
+}
+input:focus, textarea:focus {
+  background-color: #bcc0c4;
+}
+textarea{
+  height: auto;
+}
+.btn {
+  background-color: @btnColor;
+  padding: 5px 17px;
+  border-radius: 10px;
+  margin: 0px 0px 0px 6px;
+}
+.display-flex{
+  display: flex;
+}
+.display-flex > div {
+  margin-right: 10px;
+}
+.dis-relative{
+  position: relative;
+}
+.cursor-pointer {
+  cursor: pointer;
+}

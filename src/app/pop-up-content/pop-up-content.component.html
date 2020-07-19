@@ -1,0 +1,13 @@
+<div id="popUpContainer" [ngStyle]= showStyle()>
+  <span class='pointer'></span>
+  <div class="content" *ngIf= !toShow>
+    <p>Are you sure want to remove the {{comp}} column?</p>
+    <div class="display-flex">
+      <div class="btn" (click)= 'toConfirm($event)'>Yes</div>
+      <div class="btn" (click)= 'toConfirm($event)'>No</div>
+    </div>
+  </div>
+  <div class="content" *ngIf= toShow>
+    {{content}}
+  </div>
+</div>

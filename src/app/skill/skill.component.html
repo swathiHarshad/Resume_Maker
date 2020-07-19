@@ -1,0 +1,26 @@
+<div id="SkillSet" class="wholeContainer">
+
+  <div class="container" *ngFor='let data of skill; index as i; last as isLast; trackBy: toAddTracker '>
+
+    <div class="curd">
+      <app-curd-operation [last]=isLast [index]=i [comp]=comp></app-curd-operation>
+    </div>
+
+    <div class="dis-relative">
+      <div class="percentageCircle"
+        [ngStyle]="(!onclick)? getPercentageColor(data.Percentage): PercentageColor"></div>
+      <div class="percentage">
+        <input type="text" name="" value='{{data.Percentage}}' class="percentInput" 
+          (input) = 'SkillPercent(i, $event.target.value)'>
+        <span>%</span> 
+      </div>
+    </div>
+
+    <div class="squareSet">
+      <div class="name">
+        <input type="text" name="" [(ngModel)]='data.SkillName' class="content" >
+      </div>
+    </div>
+
+  </div>
+</div>

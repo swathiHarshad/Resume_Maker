@@ -1,0 +1,15 @@
+<div class="side_container" >
+  <div class="heading">Personal details</div>
+  <div class="row">
+    <div class="heading highlights">Nationality </div>
+    <input type="text" class="content" [(ngModel)]='nationality'>
+  </div>
+  <div class="row">
+    <div class="heading">Contact</div>
+    <div>
+      <div *ngFor="let data of contactInfoData">
+        <input type="text" class="content" [(ngModel)]='data.name'>
+      </div>
+    </div>
+  </div>
+</div>

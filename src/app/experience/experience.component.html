@@ -1,0 +1,10 @@
+<div class="side_container" id="experience" class="wholeContainer">
+  <div class="container" *ngFor="let data of experience_data; index as i; last as isLast; trackBy: toAddTracker"  >
+    <div class="curd">
+      <app-curd-operation [last]=isLast [index]=i [comp]= comp></app-curd-operation>
+    </div>
+    <input type="text" class="heading highlights" [(ngModel)]='data.Title'>
+    <input type="text" class="heading" [(ngModel)]='data.Company'>
+    <textarea type="text" class="content" rows="5" [(ngModel)]='data.description'></textarea>
+  </div>
+</div>

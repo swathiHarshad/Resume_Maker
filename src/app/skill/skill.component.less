@@ -1,0 +1,50 @@
+#SkillSet{
+  display: flex;
+  flex-wrap: wrap;
+}
+.percentageCircle{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: conic-gradient( 
+    rgb(247, 168, 143) 0deg 30deg, 
+  lightgrey 30deg 360deg );
+  -webkit-mask-image: radial-gradient(transparent 60%, black 44%);
+  mask-image: radial-gradient(transparent 60%, black 44%);
+}
+.percentage{
+  position: absolute;
+  top: 18px;
+  left: 12px;
+}
+.percentInput {
+  width: 23px;
+  min-width: 20px;
+  padding: 5px 0px 5px 0px;
+  text-align: end;
+}
+.container{
+  display: flex;
+  padding: 8px;
+  position: relative;
+}
+.name {
+  margin: 15px 0px 0px 10px
+}
+.curd {
+  display: none;
+  position: absolute;
+  height: 30px;
+  top: -15px;
+  right: 6px;
+  cursor: pointer;
+}
+.container:hover {
+  border-width: 4px;
+  border-style: dashed;
+  border-color: rgb(247, 168, 143);
+  .curd {
+    display: inline;
+  }
+}
+
