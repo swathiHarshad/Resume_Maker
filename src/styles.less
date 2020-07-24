@@ -8,6 +8,14 @@
 body{
   font-family: @font_family;
 }
+.Topic {
+  font-size: 22px!important;
+  text-transform: uppercase;
+  margin: 13px 0px!important;
+  .heading {
+    font-size: 22px!important;
+  }
+}
 .highlights{
  color: @heading_font_color;
  font-weight: bold;
@@ -15,9 +23,8 @@ body{
 .heading{
   font-weight: bold;
   font-size: @heading_size;
-  margin: 5px 0px;
+  margin: 5px;
   font-style: oblique;
-  text-transform: uppercase;
 }
 .sub_heading{
   font-size: @others_font;
@@ -31,11 +38,6 @@ body{
 }
 .content{
   font-size: @others_font;
-}
-.row{
-  margin: 25px 0px;
-  border-radius: 10px;
-  padding: 5px;
 }
 input, textarea{
   border: none;
@@ -70,4 +72,7 @@ textarea{
 }
 .cursor-pointer {
   cursor: pointer;
+}
+fieldset{
+  border-radius: 5%;
 }

@@ -1,9 +1,12 @@
-<div class="side_container" id="education" class="wholeContainer">
-  <div class="container" *ngFor="let data of Education_data; index as i; last as isLast; trackBy: toAddTracker"  >
-    <div class="curd">
-      <app-curd-operation [last]=isLast [index]=i [comp]= comp></app-curd-operation>
+<div>
+  <div class="heading Topic">Education</div>
+  <div class="side_container" id="education" class="wholeContainer">
+    <div class="container" *ngFor="let data of Education_data; index as i; last as isLast; trackBy: toAddTracker"  >
+      <div class="curd">
+        <app-curd-operation [last]=isLast [index]=i [comp]= comp></app-curd-operation>
+      </div>
+      <input type="text" class="heading highlights" [(ngModel)]='data.Degree'>
+      <input type="text" class="heading" [(ngModel)]='data.College'>
     </div>
-    <input type="text" class="heading highlights" [(ngModel)]='data.Degree'>
-    <input type="text" class="heading" [(ngModel)]='data.College'>
   </div>
-</div>
+</div>  
