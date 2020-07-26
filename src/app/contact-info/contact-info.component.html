@@ -1,15 +1,12 @@
-<div class="side_container" >
+<div class="side_container dis-relative" >
   <div class="heading Topic">Personal details</div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="heading highlights">Nationality </div>
     <input type="text" class="content" [(ngModel)]='nationality'>
-  </div>
+  </div> -->
   <div class="row">
     <div class="heading highlights">Contact</div>
-    <div>
-      <div *ngFor="let data of contactInfoData">
-        <input type="text" class="content" [(ngModel)]='data.name'>
-      </div>
-    </div>
+    <app-pop-up-content [comp]="comp" [contact] = 'content' [ngStyle]= "{'display':!show? 'none' : 'block' }"></app-pop-up-content>
+    <app-contact-list></app-contact-list>
   </div>
 </div>

@@ -3,7 +3,7 @@ export class Experience {
   }
 }
 export class ContactInfo {
-  constructor( public name:string, public iconImage:string, public PathUrl: string){
+  constructor( public name:string, public iconImage:string, public toShow: boolean){
   }
 }
 

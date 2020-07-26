@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ContactInfo } from '../variable.module';
 
 @Component({
@@ -7,14 +7,18 @@ import { ContactInfo } from '../variable.module';
   styleUrls: ['./contact-info.component.less']
 })
 export class ContactInfoComponent implements OnInit {
-  contactInfoData:ContactInfo[] = [
-    new ContactInfo('rharshad93@gmail.com', 'gmail', 'rharshad93@gmail.com'),
-    new ContactInfo('swathi', 'swa', 'swa')
-  ]
-  nationality:string = 'data'
+  
+  // nationality:string = 'data'
   constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+// To show the options
+  comp = 'Content-info'
+  content: ContactInfo[] = [];
+  show = false
+  @HostListener('mouseenter')  mouseenter() {
+    this.show = true
   }
-
+  @HostListener('mouseleave')  mouseleave() {
+    this.show = false
+  }
 }

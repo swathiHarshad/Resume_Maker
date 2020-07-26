@@ -1,13 +1,21 @@
-<div id="popUpContainer" [ngStyle]= showStyle()>
+<div id="popUpContainer">
   <span class='pointer'></span>
-  <div class="content" *ngIf= !toShow>
+
+  <div [ngSwitch] = comp>
+  <div *ngSwitchCase = "'Certification'" style="padding: 10px;">
+    {{content}}
+  </div>
+  <div *ngSwitchCase = "'Content-info'">
+    <app-contact-list></app-contact-list>
+  </div>
+  <div class="content" *ngSwitchDefault>
     <p>Are you sure want to remove the {{comp}} column?</p>
-    <div class="display-flex">
+    <div class="display-flex center">
       <div class="btn" (click)= 'toConfirm($event)'>Yes</div>
       <div class="btn" (click)= 'toConfirm($event)'>No</div>
     </div>
   </div>
-  <div class="content" *ngIf= toShow>
-    {{content}}
-  </div>
 </div>
+
+</div>
+

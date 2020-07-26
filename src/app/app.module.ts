@@ -12,6 +12,7 @@ import { PopUpContentComponent } from './pop-up-content/pop-up-content.component
 import { SkillComponent } from './skill/skill.component';
 import { EducationComponent } from './education/education.component';
 import { CertificateComponent } from './certificate/certificate.component';
+import { ContactListComponent } from './contact-info/contact-list/contact-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CertificateComponent } from './certificate/certificate.component';
     PopUpContentComponent,
     SkillComponent,
     EducationComponent,
-    CertificateComponent
+    CertificateComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<div>
+  <div *ngFor="let data of contactInfoData"  class="display-flex">
+    <div class="icon" [ngClass] = "'icon ' + data.iconImage"></div>
+    <input type="text" class="content" [(ngModel)]='data.name'>
+    <div class="toggle dis-relative">
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>
