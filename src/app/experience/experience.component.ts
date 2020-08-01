@@ -20,13 +20,11 @@ export class ExperienceComponent implements OnInit {
   constructor(private curdOperation: curdServices) { 
     this.curdOperation.actionStatus.subscribe(
       (obj: CurdOperationData) => {
-        console.log(obj.index, ' In experience')
         if(obj.status !== '' && obj.component=== 'experience'){
           switch (obj.status) {
             case 'add' :
               let new_Data = new Experience('Designation', 'Company Name', 'Description');
               this.experience_data.push(new_Data)
-              console.log(this.experience_data)
               break;
             case 'remove' :
               this.experience_data.splice(obj.index,1)

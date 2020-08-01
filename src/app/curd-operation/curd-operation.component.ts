@@ -13,25 +13,23 @@ export class CurdOperationComponent implements OnInit {
   @Input() index: Number
   @Input() comp: string
 
-  @ViewChild('toGetId') toGetComponentName
   constructor(private curdOperation: curdServices,
     private elRef: ElementRef) { }
 
   ngOnInit(): void {
   }
-
-  statusUpdate(data: string, event){
+@ViewChild('popup') toHide: any
+  statusUpdate(data: string){
     let obj = {
       status: data,
       index: +this.index,
       component: this.elRef.nativeElement.closest('.wholeContainer').attributes.id.value
     }
     if(data === 'remove'){
-      this.toOpenPopUp = true
       this.curdOperation.PopUpAction.subscribe(
         (PopUpData:string) => {
           (PopUpData === 'Yes')?  this.curdOperation.actionStatus.emit(obj) : ''
-          this.toOpenPopUp = false
+          console.log(this.toHide)
         }
       )
     } else{

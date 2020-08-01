@@ -15,10 +15,5 @@ export class ContactInfoComponent implements OnInit {
   comp = 'Content-info'
   content: ContactInfo[] = [];
   show = false
-  @HostListener('mouseenter')  mouseenter() {
-    this.show = true
-  }
-  @HostListener('mouseleave')  mouseleave() {
-    this.show = false
-  }
+
 }

@@ -12,11 +12,11 @@ export class PopUpContentComponent implements OnInit {
   @Input() contact: []
   toShow: boolean = false
 
-  constructor(private curdOperation : curdServices) {}
+  constructor(private curdOperation : curdServices) {
+  }
   ngOnInit(){}
 
   toConfirm(onClickEvent: any){
-    console.log(onClickEvent.target.textContent)
     this.curdOperation.PopUpAction.emit(onClickEvent.target.textContent)
   }
 

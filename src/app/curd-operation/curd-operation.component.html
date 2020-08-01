@@ -1,12 +1,10 @@
-<div id="curdContainer" #toGetId>
-  <div class="btn" (click)= 'statusUpdate("add", $event)' *ngIf = last>
+<div id="curdContainer" appHoverDirective>
+  <div class="btn" (click)= 'statusUpdate("add")' *ngIf = last name="add">
     +
   </div>
-  <div class="btn" (click)= 'statusUpdate("remove", $event)'>
+  <div class="btn" (click)= 'statusUpdate("remove")' name="remove">
     -
   </div>
-  <div *ngIf= toOpenPopUp>
-    <app-pop-up-content [comp] = comp></app-pop-up-content>
-  </div>
+  <app-pop-up-content [comp] = comp class="popup display-hidden" #popup></app-pop-up-content>
 
 </div>

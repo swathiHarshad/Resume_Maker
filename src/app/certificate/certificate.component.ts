@@ -27,11 +27,5 @@ export class CertificateComponent implements OnInit {
     }
   }
   
-  show = false
-  @HostListener('mouseenter')  mouseenter() {
-    this.show = true
-  }
-  @HostListener('mouseleave')  mouseleave() {
-    this.show = false
-  }
+
 }

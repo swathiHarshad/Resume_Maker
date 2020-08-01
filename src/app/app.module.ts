@@ -13,6 +13,7 @@ import { SkillComponent } from './skill/skill.component';
 import { EducationComponent } from './education/education.component';
 import { CertificateComponent } from './certificate/certificate.component';
 import { ContactListComponent } from './contact-info/contact-list/contact-list.component';
+import { HoverDirectiveDirective } from './hover-directive.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ContactListComponent } from './contact-info/contact-list/contact-list.c
     SkillComponent,
     EducationComponent,
     CertificateComponent,
-    ContactListComponent
+    ContactListComponent,
+    HoverDirectiveDirective
   ],
   imports: [
     BrowserModule,

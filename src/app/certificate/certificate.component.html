@@ -1,5 +1,5 @@
-<div class="dis-relative" > 
-  <app-pop-up-content [comp]="comp" [content] = 'content' [ngStyle]= "{'display':!show? 'none' : 'block' }"></app-pop-up-content>
+<div class="dis-relative" appHoverDirective> 
+  <app-pop-up-content [comp]="comp" [content] = 'content' class="tooltip display-hidden"></app-pop-up-content>
   <div class="display-flex Topic cursor-pointer" mouseenter>
     <div class="heading" (click)="upload.click()" >  Badges  </div>
     <input hidden type="file" #upload (change)="fileChangeEvent($event)"/>
