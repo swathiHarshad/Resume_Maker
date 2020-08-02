@@ -1,4 +1,4 @@
-import { Directive, HostListener, HostBinding, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, HostListener, HostBinding, ElementRef, Renderer2, ViewChild } from '@angular/core';
 
 @Directive({
   selector: '[appHoverDirective]'
@@ -15,16 +15,16 @@ export class HoverDirectiveDirective {
   @HostListener('mouseleave')  mouseleave() {
     this.div = this.elRef.nativeElement.querySelector('.tooltip')
     if(this.div !== null){
-     this.toHide(this.div) 
+     this.toHide() 
     }
   }
   @HostListener('click', ['$event.target']) Onclick(btn) {
-    this.div = this.elRef.nativeElement.querySelectorAll('.popup')
+    this.div = this.elRef.nativeElement.querySelector('.popup')
       if(this.div !== null && btn.attributes.name.value === 'remove') {
-        this.toShow(this.div[0])
+        this.toShow(this.div)
       }
       else{
-        // this.toHide()
+        this.toHide()
       }
   }
 
@@ -36,12 +36,12 @@ export class HoverDirectiveDirective {
     
     div.classList.add('display-block')  
   }
-  toHide(div: any) {
-    if(div.classList.contains('display-block')){
-      div.classList.remove('display-block')
+  toHide() {
+    if(this.div.classList.contains('display-block')){
+      this.div.classList.remove('display-block')
     }
 
-    div.classList.add('display-hidden')
+    this.div.classList.add('display-hidden')
   }
 
 }
