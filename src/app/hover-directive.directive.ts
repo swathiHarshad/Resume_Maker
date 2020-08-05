@@ -1,4 +1,4 @@
-import { Directive, HostListener, HostBinding, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Directive, HostListener, ElementRef, Renderer2, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[appHoverDirective]'
@@ -6,10 +6,28 @@ import { Directive, HostListener, HostBinding, ElementRef, Renderer2, ViewChild 
 export class HoverDirectiveDirective {
   constructor(private elRef: ElementRef, private renderer : Renderer2) { }
   div: any
+
   @HostListener('mouseenter')  mouseenter() {
     this.div = this.elRef.nativeElement.querySelector('.tooltip')
     if(this.div !== null){
-      this.toShow(this.div) 
+      this.toShow() 
+    }
+  }
+ 
+  @HostListener('click', ['$event.target']) Onclick(btn) {
+    this.div = btn.nextElementSibling
+    if(this.div !== null || btn.attributes.name !== null){
+      switch (btn.attributes.name.value){
+        case 'remove':
+          this.toShow()
+          break;
+        case 'contact':
+          this.toShow()
+          break;
+        default:
+          this.div = this.elRef.nativeElement.querySelector('.popup')
+          this.toHide()
+      }
     }
   }
   @HostListener('mouseleave')  mouseleave() {
@@ -17,30 +35,27 @@ export class HoverDirectiveDirective {
     if(this.div !== null){
      this.toHide() 
     }
-  }
-  @HostListener('click', ['$event.target']) Onclick(btn) {
     this.div = this.elRef.nativeElement.querySelector('.popup')
-      if(this.div !== null && btn.attributes.name.value === 'remove') {
-        this.toShow(this.div)
-      }
-      else{
-        this.toHide()
-      }
+    if(this.div !== null){
+      this.toHide()
+    }else if (this.elRef.nativeElement.nextElementSibling.classList.contains('popup')){
+      this.div = this.elRef.nativeElement.nextElementSibling
+      this.toHide()
+    }
+    console.log (this.div)
   }
 
-
-  toShow(div:any ) {
-    if(div.classList.contains('display-hidden')){
-      div.classList.remove('display-hidden')
+  toShow() {
+    if(this.div.classList.contains('display-hidden')){
+      this.div.classList.remove('display-hidden')
     }
     
-    div.classList.add('display-block')  
+    this.div.classList.add('display-block')  
   }
   toHide() {
     if(this.div.classList.contains('display-block')){
       this.div.classList.remove('display-block')
     }
-
     this.div.classList.add('display-hidden')
   }
 

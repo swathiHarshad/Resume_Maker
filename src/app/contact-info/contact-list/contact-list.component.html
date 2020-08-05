@@ -1,10 +1,12 @@
 <div>
-  <div *ngFor="let data of contactInfoData"  class="display-flex">
-    <div class="icon" [ngClass] = "'icon ' + data.iconImage"></div>
-    <input type="text" class="content" [(ngModel)]='data.name'>
-    <div class="toggle dis-relative">
-      <input type="checkbox">
-      <div class="circle"></div>
+  <div *ngFor="let data of contactInfoData; let i = index"  >
+    <div class="display-flex" [ngClass] = "(!data.toShow && !popup)? 'display-hidden' : ''">
+      <div class="icon" [ngClass] = "'icon ' + data.iconImage"></div>
+      <input type="text" class="content" [(ngModel)]='data.name'>
+      <label class="switch" *ngIf='popup'>
+        <input type="checkbox" [checked] = 'data.toShow' [(ngModel)]='data.toShow' >
+        <span class="slider"></span>
+      </label>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ContactInfo } from 'src/app/variable.module';
+import { Component, OnInit, Input } from '@angular/core';
+import { ContactInfo, contactInfoData } from 'src/app/variable.module';
 
 @Component({
   selector: 'app-contact-list',
@@ -7,15 +7,9 @@ import { ContactInfo } from 'src/app/variable.module';
   styleUrls: ['./contact-list.component.less']
 })
 export class ContactListComponent implements OnInit {
+  @Input() popup: boolean
 
   constructor() { }
-
   ngOnInit(): void {}
-  contactInfoData:ContactInfo[] = [
-    new ContactInfo('Mail Id', 'gmail', true),
-    new ContactInfo('Contact Number', 'phone', true),
-    new ContactInfo('Github URL', 'github', true),
-    new ContactInfo('LinkedIn', 'linkedin', true),
-    new ContactInfo('Website URL', 'website', true)
-  ]
+  contactInfoData:ContactInfo[] = contactInfoData
 }

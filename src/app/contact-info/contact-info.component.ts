@@ -13,7 +13,7 @@ export class ContactInfoComponent implements OnInit {
   ngOnInit(): void {}
 // To show the options
   comp = 'Content-info'
-  content: ContactInfo[] = [];
+  content: 'To remove any contact info in the column';
   show = false
 
 }

@@ -11,7 +11,7 @@ export class PopUpContentComponent implements OnInit {
   @Input() content: string
   @Input() contact: []
   toShow: boolean = false
-
+  popup: boolean = true
   constructor(private curdOperation : curdServices) {
   }
   ngOnInit(){}

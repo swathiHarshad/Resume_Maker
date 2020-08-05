@@ -5,4 +5,6 @@ export class curdServices {
 
   actionStatus = new EventEmitter<CurdOperationData>();
   PopUpAction = new EventEmitter<string>();
+  // toEnableOrDisable = new EventEmitter<string>();
+
 }

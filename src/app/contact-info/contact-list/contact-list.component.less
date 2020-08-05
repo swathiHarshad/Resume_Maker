@@ -1,114 +1,92 @@
-.icon{
-  background: url('../../../assets/social-media.svg');
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-size: 68px;
-}
-.github{
-  background-image: url('../../../assets/github.png');
-  background-size: 19px;
-}
-.website {
-  background-image: url('../../../assets/website.png');
-  background-size: 19px;
-}
-.gmail {
-  background-position: -1px -43px;
-}
-.linkedin {
-  background-position: -24px -43px;
-}
-.phone {
-  background-position: -1px;
-}
-.content {
-  padding: 0px;
-}
 .display-flex {
   padding: 5px;
-}
-// toggle css
-.toggle{
-  width: 46px;
-  border: 1px solid;
-  border-radius:11px ;
-  input:checked + .circle {
-    background-color: #2196F3;
+  .icon{
+    background: url('../../../assets/social-media.svg');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 68px;
   }
-  .circle {
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    border: 1px solid;
-    border-radius: 50px;
-    -webkit-transition: .4s;
-    transition: .4s; 
+  .github{
+    background-image: url('../../../assets/github.png');
+    background-size: 19px;
   }
-  .circle:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 50%;
+  .website {
+    background-image: url('../../../assets/website.png');
+    background-size: 19px;
+  }
+  .gmail {
+    background-position: -1px -43px;
+  }
+  .linkedin {
+    background-position: -24px -43px;
+  }
+  .phone {
+    background-position: -1px;
+  }
+  .content {
+    padding: 0px;
   }
 }
-  
-
-
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
-  input{
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 34px;
-  }
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 50%;
-  }
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
+  width: 49px;
+  height: 20px;
+  // pointer-events: none
 }
 
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50px;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
