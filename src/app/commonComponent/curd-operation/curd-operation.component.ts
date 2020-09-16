@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 
-import { curdServices } from '../services/curd.services';
+import { curdServices } from '../../services/curd.services';
 
 @Component({
   selector: 'app-curd-operation',

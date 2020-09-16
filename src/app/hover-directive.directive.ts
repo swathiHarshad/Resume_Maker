@@ -1,5 +1,7 @@
 import { Directive, HostListener, ElementRef, Renderer2, HostBinding } from '@angular/core';
-
+// https://codepen.io/mo7amedk7alid29/pen/dRoMwo?editors=1100 
+// https://codepen.io/girlgeek/pen/OgqBgj
+// Timeline refer
 @Directive({
   selector: '[appHoverDirective]'
 })
@@ -22,7 +24,10 @@ export class HoverDirectiveDirective {
           this.toShow()
           break;
         case 'contact':
-          this.toShow()
+          if(this.div.classList.contains('display-block')){
+            this.toHide()
+          } else
+            this.toShow()
           break;
         default:
           this.div = this.elRef.nativeElement.querySelector('.popup')
@@ -35,14 +40,11 @@ export class HoverDirectiveDirective {
     if(this.div !== null){
      this.toHide() 
     }
-    this.div = this.elRef.nativeElement.querySelector('.popup')
-    if(this.div !== null){
-      this.toHide()
-    }else if (this.elRef.nativeElement.nextElementSibling.classList.contains('popup')){
-      this.div = this.elRef.nativeElement.nextElementSibling
-      this.toHide()
-    }
-    console.log (this.div)
+    // this.div = this.elRef.nativeElement.querySelector('.popup')
+    // if(this.div !== null){
+    //   this.toHide()
+    // }
+    // console.log (this.div)
   }
 
   toShow() {

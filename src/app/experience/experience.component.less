@@ -1,19 +1,54 @@
+@import '../../variablesForCSS.less';
+
 .wholeContainer{
   display: flex;
   flex-direction: column-reverse;
+  position: relative;
   .heading{
     margin-bottom: 5px;
   }
-  .container > div {
-    margin-bottom: 10px;
-  }
-  .container:focus-within {
-    box-shadow: 3px 4px 10px 12px rgb(156, 152, 151);
-    border-radius: 15px;
-    padding: 9px;
+  .container{
+    &:focus-within{
+      box-shadow: 3px 4px 10px 12px rgb(156, 152, 151);
+      border-radius: 15px;
+      padding: 9px;
+    }
+    div{
+      margin-bottom: 10px;
+    }
+    .content{
+      width: 100%;
+    }
+    .circle{
+      content: "";
+      width: 10px;
+      height: 10px;
+      background-color: @btnColor;
+      border: .2em solid white;
+      border-radius: 50%;
+      position: absolute;
+      left: -1.8%;
+      top: 10px;
+    }
+    .Line{
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: @btnColor;
+      position: absolute;
+      top: 20px;
+      left: -1%;
+      border-radius: 40px 40px;
+    }
+    .subHeading {
+      margin: 0px;
+      padding: 0px 0px 0px 20px;
+      font-size: 15px;
+    }
   }
   .curd{
     float: right;
     cursor: pointer;
   }
+  
 }

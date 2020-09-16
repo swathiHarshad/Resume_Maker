@@ -1,13 +1,17 @@
-<div >
+<div class="dis-relative">
   <div class="heading Topic">Employment</div>
   <div class="side_container" id="experience" class="wholeContainer">
-    <div class="container" *ngFor="let data of experience_data; index as i; last as isLast; trackBy: toAddTracker"  >
+    <div class="container dis-relative" *ngFor="let data of experience_data; index as i; last as isLast; first as isFirst; trackBy: toAddTracker"  >
+      <app-date-template [component]='comp' [index]=i></app-date-template>
+      <span class="circle" ></span>
+      <span class="Line" *ngIf="!isFirst"></span>
       <div class="curd">
         <app-curd-operation [last]=isLast [index]=i [comp]= comp></app-curd-operation>
       </div>
       <input type="text" class="heading highlights" [(ngModel)]='data.Title'>
-      <input type="text" class="heading" [(ngModel)]='data.Company'>
-      <textarea type="text" class="content" rows="5" [(ngModel)]='data.description'></textarea>
+      <input type="text" class="heading subHeading" [(ngModel)]='data.Company'>
+      <textarea type="text" class="content" rows="5" [(ngModel)]='data.description' (keyup)="textAreaAdjust($event)" ></textarea>
+      <app-skill-tag [comp] = 'comp'></app-skill-tag>
     </div>
   </div>
 </div>

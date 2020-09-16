@@ -1,5 +1,5 @@
 export class Experience {
-  constructor(public Title: string, public Company: string, public description: string){
+  constructor(public Title: string, public Company: string, public description: string, public From: string, public To: string){
   }
 }
 export class ContactInfo {
@@ -8,7 +8,7 @@ export class ContactInfo {
 }
 
 export class Education {
-  constructor(public Degree: string, public College: string) {
+  constructor(public Degree: string, public College: string, public From: string, public To: string) {
   }
 }
 export let contactInfoData:ContactInfo[] = [
@@ -22,6 +22,10 @@ export let contactInfoData:ContactInfo[] = [
 export class CurdOperationData {
   constructor(public status: string, public index: number, public component){
   }
+}
+
+export class DateUpdateObj {
+  constructor(public comp: string, public index: number, public when: string, public date: string){}
 }
 
 export class Skill {

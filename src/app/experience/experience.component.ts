@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Experience, CurdOperationData } from '../variable.module';
+import { Experience, CurdOperationData, DateUpdateObj } from '../variable.module';
 import { curdServices } from '../services/curd.services'
 
 @Component({
@@ -10,7 +10,7 @@ import { curdServices } from '../services/curd.services'
 })
 export class ExperienceComponent implements OnInit {
   @Input() experience_data : Experience[] = [
-    new Experience('Associate', 'Cognizant', "Description"),
+    new Experience('Designation', 'Company', "Description", '',''),
   ]
   
   @Input() last = false
@@ -23,7 +23,7 @@ export class ExperienceComponent implements OnInit {
         if(obj.status !== '' && obj.component=== 'experience'){
           switch (obj.status) {
             case 'add' :
-              let new_Data = new Experience('Designation', 'Company Name', 'Description');
+              let new_Data = new Experience('Designation', 'Company Name', 'Description', '', '');
               this.experience_data.push(new_Data)
               break;
             case 'remove' :
@@ -33,11 +33,21 @@ export class ExperienceComponent implements OnInit {
         }
       }
     );
+    this.curdOperation.dateUpdate.subscribe((Obj: DateUpdateObj)=>{
+      if(Obj.comp === this.comp){
+        this.experience_data[Obj.index][Obj.when] = Obj.date
+      }
+    })
   }
 
   ngOnInit(): void {
   }
-  toAddTracker(index:number, el:any): number {
+  toAddTracker(el:any): number {
     return el.index;
+  }
+  textAreaAdjust(event){
+    console.log(event)
+    event.target.style.height = "1px";
+    event.target.style.height = (25+event.target.scrollHeight)+"px";
   }
 }

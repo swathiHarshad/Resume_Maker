@@ -1,3 +1,5 @@
+@import '../../variablesForCSS.less';
+
 #SkillSet{
   display: flex;
   flex-wrap: wrap;
@@ -7,7 +9,7 @@
   width: 60px;
   border-radius: 50%;
   background: conic-gradient( 
-    rgb(247, 168, 143) 0deg 30deg, 
+    @btnColor 0deg 30deg, 
   lightgrey 30deg 360deg );
   -webkit-mask-image: radial-gradient(transparent 60%, black 44%);
   mask-image: radial-gradient(transparent 60%, black 44%);
@@ -42,7 +44,7 @@
 .container:hover {
   border-width: 4px;
   border-style: dashed;
-  border-color: rgb(247, 168, 143);
+  border-color: @btnColor;
   .curd {
     display: inline;
   }

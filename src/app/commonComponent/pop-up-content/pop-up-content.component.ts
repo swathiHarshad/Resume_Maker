@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { curdServices } from '../services/curd.services';
+import { curdServices } from '../../services/curd.services';
 
 @Component({
   selector: 'app-pop-up-content',
