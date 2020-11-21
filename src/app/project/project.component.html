@@ -1,16 +1,16 @@
 <div class="dis-relative">
-  <div class="heading Topic">Employment</div>
-  <div class="side_container" id="experience" class="wholeContainer">
-    <div class="container dis-relative" *ngFor="let data of experience_data; index as i; last as isLast; first as isFirst; trackBy: toAddTracker"  >
+  <div class="heading Topic">Project</div>
+  <div class="side_container" id="project" class="wholeContainer">
+    <div class="container dis-relative" *ngFor="let data of projectData; index as i; last as isLast; first as isFirst; trackBy: toAddTracker"  >
       <app-date-template [component]='comp' [index]=i></app-date-template>
-      <span class="circle" ></span>
-      <span class="Line" *ngIf="!isFirst"></span>
       <div class="curd">
         <app-curd-operation [last]=isLast [index]=i [comp]= comp></app-curd-operation>
       </div>
       <input type="text" class="heading highlights" [(ngModel)]='data.Title' placeholder="Title">
-      <input type="text" class="heading subHeading" [(ngModel)]='data.Company' placeholder="Company Name">
-      <textarea type="text" class="content" rows="5" [(ngModel)]='data.description' (keyup)="textAreaAdjust($event)" placeholder="About the experience in that company " ></textarea>
+      <input type="text" class="heading subHeading" [(ngModel)]='data.Domain' placeholder="Open source or Company Name">
+      <input type="text" class="heading subHeading" [(ngModel)]='data.Repo' placeholder="Github or Repo Link">
+
+      <textarea type="text" class="content" rows="5" [(ngModel)]='data.description' (keyup)="textAreaAdjust($event)" placeholder="About the project" ></textarea>
 
       <div class="skillSetContainer display-flex">
         <div class="heading">Skill Set: </div>

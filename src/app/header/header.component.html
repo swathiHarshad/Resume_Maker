@@ -1,9 +1,19 @@
 <div class="header">
   <div class="profile-img">
-    <div class="image" style="background-image: url('../../assets/160224-F-YG608-1041.jpg');"></div>
+    <!-- <div class="image" style="background-image: url('../../assets/160224-F-YG608-1041.jpg');"> -->
+    <div class="image" [style.background-image]="'url('+profileImage+')'">
+
+      <div class="uploadDp" (click)="upload.click()">
+        <div class="image icon" style="background-image: url('../../assets/upload-image-icon.jpg');"></div>
+        <input hidden type="file" #upload (change)="fileChangeEvent($event)"/>
+      </div>
+    </div>
+    <!-- <div class="uploadDp">
+      <div class="image icon" style="background-image: url('../../assets/upload-image-icon.jpg');"></div>
+    </div> -->
   </div>
   <div class="main-detail">
-    <input type="text" class="name highlights" [(ngModel)]='name'>
-    <input type="text" class="heading" [(ngModel)]='occupation'>
+    <input type="text" class="name highlights" [(ngModel)]='name' placeholder="Name">
+    <input type="text" class="heading" [(ngModel)]='occupation' placeholder="Occupation| certificates">
   </div>
 </div>

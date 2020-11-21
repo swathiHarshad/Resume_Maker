@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-certificate',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./certificate.component.less']
 })
 export class CertificateComponent implements OnInit {
-  constructor() {}
+  constructor(private elementRef:ElementRef) {}
   ngOnInit(): void {}
 
 
@@ -26,5 +26,6 @@ export class CertificateComponent implements OnInit {
       console.log('ReadAsDefault ', reader.readAsDataURL(fileInput.target.files[0]))
     }
   }
+  
 
 }

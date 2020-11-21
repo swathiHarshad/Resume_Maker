@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Experience, CurdOperationData } from '../variable.module';
+import { Experience, CurdOperationData, DateUpdateObj } from '../variable.module';
 import { curdServices } from '../services/curd.services'
 
 @Component({
@@ -10,7 +10,7 @@ import { curdServices } from '../services/curd.services'
 })
 export class ExperienceComponent implements OnInit {
   @Input() experience_data : Experience[] = [
-    new Experience('Associate', 'Cognizant', "Description"),
+    new Experience('', '', "", '','',[]),
   ]
   
   @Input() last = false
@@ -20,13 +20,11 @@ export class ExperienceComponent implements OnInit {
   constructor(private curdOperation: curdServices) { 
     this.curdOperation.actionStatus.subscribe(
       (obj: CurdOperationData) => {
-        console.log(obj.index, ' In experience')
-        if(obj.status !== '' && obj.component=== 'experience'){
+        if(obj.status !== '' && obj.component=== this.comp){
           switch (obj.status) {
             case 'add' :
-              let new_Data = new Experience('Designation', 'Company Name', 'Description');
+              let new_Data = new Experience('', '', '', '', '',[]);
               this.experience_data.push(new_Data)
-              console.log(this.experience_data)
               break;
             case 'remove' :
               this.experience_data.splice(obj.index,1)
@@ -35,11 +33,36 @@ export class ExperienceComponent implements OnInit {
         }
       }
     );
+    this.curdOperation.dateUpdate.subscribe((Obj: DateUpdateObj)=>{
+      if(Obj.comp === this.comp){
+        this.experience_data[Obj.index][Obj.when] = Obj.date
+      }
+    })
+  }
+  // Skill Tag
+  toRemoveSkill(skillIndex: number, experienceIndex: number){
+    // this.experience_data.splice(index,1)
+    console.log(skillIndex, experienceIndex)
+    this.experience_data[experienceIndex].Skill.splice(skillIndex,1)
+    console.log(this.experience_data[experienceIndex].Skill)
+  }
+  SkillSetData(event: any, experienceIndex: number){
+    console.log(event.target.value)
+    let value = event.target.value
+    if(event.code === 'Enter'){
+      this.experience_data[experienceIndex].Skill.push(value)
+      event.currentTarget.value= ''
+    }
   }
 
-  ngOnInit(): void {
-  }
-  toAddTracker(index:number, el:any): number {
+  toAddTracker(el:any): number {
     return el.index;
+  }
+  textAreaAdjust(event){
+    console.log(event)
+    event.target.style.height = "1px";
+    event.target.style.height = (25+event.target.scrollHeight)+"px";
+  }
+  ngOnInit(): void {
   }
 }

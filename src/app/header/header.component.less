@@ -1,3 +1,5 @@
+@import '../../variablesForCSS.less';
+
 .header {
   display: flex;
   margin: 10px 15px;
@@ -6,11 +8,32 @@
     margin-left: 2%;
     .image{
       border-radius: 50% ;
+      background-image: url('../../assets/160224-F-YG608-1041.jpg');
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      &:hover{
+        .uploadDp{
+          opacity: 1;
+        }
+      }
+    }
+    .uploadDp{
+      opacity: 0;
+      padding: 3%;
+      background-color: @btnColor;
+      border-radius: 50%;
+    }
+    .icon{
+      width: 30px!important;
+      height: 30px!important;
     }
   }
   .main-detail{
     margin-left: 4%;
     padding-top: 10px;
+    width: 79%;
     .name{
       font-size: 75px;
     }

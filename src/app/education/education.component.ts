@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Education, CurdOperationData } from '../variable.module';
+import { Education, CurdOperationData, DateUpdateObj } from '../variable.module';
 import { curdServices } from '../services/curd.services';
 
 @Component({
@@ -10,7 +10,7 @@ import { curdServices } from '../services/curd.services';
 export class EducationComponent implements OnInit {
   
   @Input() Education_data : Education[] =[
-    new Education ('Degree', 'College')
+    new Education ('Degree', 'College', '', '')
   ]
 
   comp = "Educational" 
@@ -21,7 +21,7 @@ export class EducationComponent implements OnInit {
         if(obj.status !== '' && obj.component === 'education'){
           switch (obj.status) {
             case 'add' :
-              let new_Data = new Education('Degree', 'College Name');
+              let new_Data = new Education('Degree', 'College Name', '', '');
               this.Education_data.push(new_Data)
               break;
             case 'remove' :
@@ -31,6 +31,12 @@ export class EducationComponent implements OnInit {
         }
       }
     );
+
+    this.curdOperation.dateUpdate.subscribe((Obj: DateUpdateObj)=>{
+      if(Obj.comp === this.comp){
+        this.Education_data[Obj.index][Obj.when] = Obj.date
+      }
+    })
    }
 
   ngOnInit(): void {

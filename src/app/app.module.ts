@@ -6,12 +6,19 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
 import { ExperienceComponent } from './experience/experience.component';
-import { CurdOperationComponent } from './curd-operation/curd-operation.component';
+import { CurdOperationComponent } from './commonComponent/curd-operation/curd-operation.component';
 import { curdServices } from './services/curd.services';
-import { PopUpContentComponent } from './pop-up-content/pop-up-content.component';
+import { PopUpContentComponent } from './commonComponent/pop-up-content/pop-up-content.component';
 import { SkillComponent } from './skill/skill.component';
 import { EducationComponent } from './education/education.component';
 import { CertificateComponent } from './certificate/certificate.component';
+import { ContactListComponent } from './contact-info/contact-list/contact-list.component';
+import { HoverDirectiveDirective } from './hover-directive.directive';
+import { DateTemplateComponent } from './commonComponent/date-template/date-template.component';
+import { ProjectComponent } from './project/project.component';
+import { SkillTagComponent } from './commonComponent/skill-tag/skill-tag.component';
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { ToggleBtnComponent } from './commonComponent/toggle-btn/toggle-btn.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,14 @@ import { CertificateComponent } from './certificate/certificate.component';
     PopUpContentComponent,
     SkillComponent,
     EducationComponent,
-    CertificateComponent
+    CertificateComponent,
+    ContactListComponent,
+    HoverDirectiveDirective,
+    DateTemplateComponent,
+    ProjectComponent,
+    SkillTagComponent,
+    MenuBarComponent,
+    ToggleBtnComponent
   ],
   imports: [
     BrowserModule,

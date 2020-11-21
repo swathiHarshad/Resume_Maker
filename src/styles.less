@@ -1,12 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-@heading_font_color : #f56342;
-@btnColor: rgb(247, 168, 143);
-@heading_size : 18px;
-@others_font : 16px;
-@font_family: Calibri;
+@import './variablesForCSS.less' ;
 
 body{
   font-family: @font_family;
+}
+.Topic {
+  font-size: 22px!important;
+  text-transform: uppercase;
+  margin: 13px 0px!important;
+  .heading {
+    font-size: 22px!important;
+  }
+}
+.right_container .Topic{
+  border-bottom: 1px solid @btnColor;
 }
 .highlights{
  color: @heading_font_color;
@@ -15,9 +22,8 @@ body{
 .heading{
   font-weight: bold;
   font-size: @heading_size;
-  margin: 5px 0px;
+  margin: 5px;
   font-style: oblique;
-  text-transform: uppercase;
 }
 .sub_heading{
   font-size: @others_font;
@@ -32,18 +38,13 @@ body{
 .content{
   font-size: @others_font;
 }
-.row{
-  margin: 25px 0px;
-  border-radius: 10px;
-  padding: 5px;
-}
 input, textarea{
   border: none;
   outline: none;
   // border-bottom: 1px solid lightgrey;
   border-radius: 10px;
   padding: 5px;
-  min-width: 80%;
+  min-width: 68%;
   max-width: 90%;
   cursor: pointer;
 }
@@ -70,4 +71,17 @@ textarea{
 }
 .cursor-pointer {
   cursor: pointer;
+}
+fieldset{
+  border-radius: 5%;
+}
+.icon {
+  background-color: @btnColor!important;
+  border-radius: 7px!important;
+}
+.display-block {
+  display: block!important;
+}
+.display-hidden {
+  display: none!important;
 }

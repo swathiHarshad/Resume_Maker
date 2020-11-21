@@ -1,0 +1,8 @@
+<div class="skillSetContainer display-flex">
+    <div class="heading">Skill Set: </div>
+
+    <div class="tags display-flex" *ngFor='let skill of skillSet; index as i '>
+      <div class="btn dis-relative">{{skill}}<span class="removeBtn" (click)='toRemoveSkill(i)'>+</span></div>
+    </div>
+    <input type="text" class="content" #skillInput placeholder="Skills" (keyup)='SkillSetData($event)'>
+</div>
