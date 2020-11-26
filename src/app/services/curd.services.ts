@@ -6,4 +6,5 @@ export class curdServices {
   actionStatus = new EventEmitter<CurdOperationData>();
   PopUpAction = new EventEmitter<string>();
   dateUpdate = new EventEmitter<object>();
+  menuupdate = new EventEmitter<string>();
 }

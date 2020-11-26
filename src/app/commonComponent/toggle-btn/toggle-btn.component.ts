@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { curdServices } from 'src/app/services/curd.services';
 
 @Component({
   selector: 'app-toggle-btn',
@@ -6,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toggle-btn.component.less']
 })
 export class ToggleBtnComponent implements OnInit {
-  toShow: boolean = true
-  constructor() { }
-
+  @Input() toShow: boolean
+  @Input() comp : string
+  @Input() variables : object
+  constructor(private curdOperation: curdServices) {
+   }
+   menuShortUpdate(event){
+     console.log(this.comp)
+    this.curdOperation.menuupdate.emit(this.comp)
+   }
   ngOnInit(): void {
   }
 

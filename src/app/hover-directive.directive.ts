@@ -18,12 +18,19 @@ export class HoverDirectiveDirective {
  
   @HostListener('click', ['$event.target']) Onclick(btn) {
     this.div = btn.nextElementSibling
+    console.log(this.div)
     if(btn.attributes.name !== undefined){
       switch (btn.attributes.name.value){
         case 'remove':
           this.toShow()
           break;
         case 'contact':
+          if(this.div !== null && this.div.classList.contains('display-block')){
+            this.toHide()
+          } else
+            this.toShow()
+          break;
+        case 'menu':
           if(this.div !== null && this.div.classList.contains('display-block')){
             this.toHide()
           } else

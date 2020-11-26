@@ -1,11 +1,30 @@
-<div class="menuBarContainer">
-  <div class="label">Menu</div>
-  <div class="container">
-    <div class="right_container">
-      <div class="heading highlights">Contacts</div>
-      <app-contact-list popup= popup></app-contact-list>
-      <div class="heading highlights">Certificate<span><app-toggle-btn></app-toggle-btn></span></div>
+<div class="menuBarContainer" >
+  <div class="label" name="menu" appHoverDirective>Menu</div>
+  <div class="display-hidden">
+    <div class="container ">
+      <div class="right_container">
+        <div class="heading highlights">Contacts
+          <span><app-toggle-btn variables= variables comp='contactInfo'></app-toggle-btn></span>
+        </div>
+        <app-contact-list popup= popup></app-contact-list>
+        <div class="heading highlights">Badges
+          <span><app-toggle-btn variables= variables comp='certificate'></app-toggle-btn></span>
+        </div>
+      </div>
+      <div class="left_container">
+        <div class="heading highlights">Skill
+          <span><app-toggle-btn variables= variables comp='Skills'></app-toggle-btn></span>
+        </div>
+        <div class="heading highlights">Employment
+          <span><app-toggle-btn variables= variables comp='experence'></app-toggle-btn></span>
+        </div>
+        <div class="heading highlights">Project
+          <span><app-toggle-btn variables= variables comp='project'></app-toggle-btn></span>
+        </div>
+        <div class="heading highlights">Education
+          <span><app-toggle-btn variables= variables comp='education'></app-toggle-btn></span>
+        </div>
+      </div>
     </div>
-    
   </div>
 </div>

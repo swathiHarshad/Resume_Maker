@@ -1,15 +1,15 @@
 <app-header></app-header>
-<!-- <app-menu-bar></app-menu-bar> -->
+<app-menu-bar variables = variables></app-menu-bar>
 <div class="container">
   <div class="left_container">
-    <app-contact-info></app-contact-info>
-    <app-certificate></app-certificate>
+    <app-contact-info *ngIf=variables.contactInfo></app-contact-info>
+    <app-certificate *ngIf=variables.certificate></app-certificate>
   </div>
   <div class="right_container">
-    <app-skill></app-skill>
-    <app-experience></app-experience>
-    <app-project></app-project>
-    <app-education></app-education>
+    <app-skill *ngIf=variables.Skills></app-skill>
+    <app-experience *ngIf=variables.experence></app-experience>
+    <app-project *ngIf=variables.project></app-project>
+    <app-education *ngIf=variables.education></app-education>
   </div>
   
 </div>

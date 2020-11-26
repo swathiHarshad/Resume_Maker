@@ -1,6 +1,21 @@
 @import '../../variablesForCSS.less';
 
 .menuBarContainer{
+  position: fixed;
+  right: 90px;
+  width: 60%;
+  background-color: white;
+  z-index: 9;
+  padding: 10px 30px;
+  box-shadow: 3px 4px 10px 12px rgb(156, 152, 151);
+  border-radius: 20px;
+  .heading{
+    position: relative;
+    span{
+      position: absolute;
+      right: 0px;
+    }
+  }
   .label{
     position: fixed;
     right: 0px;
@@ -8,5 +23,12 @@
     border-radius: 25%;
     background-color: @btnColor;
     transform: rotate(90deg);
+  }
+  .container{
+    display: flex;
+    justify-content: space-around;
+    .left_container {
+      width: 28%
+    }
   }
 }
