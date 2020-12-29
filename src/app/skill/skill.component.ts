@@ -8,65 +8,41 @@ import { curdServices } from '../services/curd.services';
   styleUrls: ['./skill.component.less']
 })
 export class SkillComponent implements OnInit {
-  @Output() skill:Skill[] = [
-    new Skill('Skill Name', 100)
-  ]
-  skillPercent: number = 0
-  PercentageColor: {
-    background: string
-  } 
-  onclick = false
+  @Output() skill:Skill[] = [ new Skill('Skill Name', 100) ]
   comp = "Skill Set"
   constructor(private curdOperation: curdServices) {
     this.curdOperation.actionStatus.subscribe(
       (obj: CurdOperationData)=>{
-
         if(obj.status !== '' && obj.component === "SkillSet"){
           switch (obj.status) {
             case 'add' :
               let new_Data = new Skill('Skill Name', 0 );
               this.skill.push(new_Data)
-              console.log(this.skill)
               break;
             case 'remove' :
               this.skill.splice(obj.index,1)
               break;
           }
         }
-
       }
     )
    }
-
-  ngOnInit(): void {
-  }
-
-
-
-
-
-  SkillPercent(i:number, percentInput: string){
-    console.log(percentInput)
-    if(percentInput !== '') {
+  ngOnInit(): void {}
+  SkillPercent(i:number, percentInput: string, event: any){
+    if(percentInput !== '' && +percentInput <= 100) {
       this.skill[i].Percentage = +percentInput
+      this.getPercentageColor(this.skill[i].Percentage)
     }else{
       this.skill[i].Percentage = 0
-    }
-    if(this.skill[i].Percentage <= 100)
-    this.getPercentageColor(this.skill[i].Percentage)
-    else {
       this.getPercentageColor(0)
-      this.skill[i].Percentage = 0 
     }
-    this.onclick = true
   }
   getPercentageColor(Percent: number){
-
-    this.skillPercent = 3.6 * Percent // 3.6= 360deg / 100%
-    this.PercentageColor = {
-      background: 'conic-gradient( rgb(247, 168, 143) 0deg '+ this.skillPercent +'deg, lightgrey '+this.skillPercent+'deg 360deg )'
+    let skillPercent = 3.6 * Percent // 3.6= 360deg / 100%
+    let percent = {
+      background: 'conic-gradient( rgb(247, 168, 143) 0deg '+ skillPercent +'deg, lightgrey '+skillPercent+'deg 360deg )'
     }
-    return this.PercentageColor 
+      return percent
   }
   toAddTracker(index:number, el:any): number {
     return el.index;

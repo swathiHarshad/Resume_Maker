@@ -10,7 +10,7 @@ import { curdServices } from '../services/curd.services';
 export class EducationComponent implements OnInit {
   
   @Input() Education_data : Education[] =[
-    new Education ('Degree', 'College', '', '')
+    new Education ('', '', '', '')
   ]
 
   comp = "Educational" 
@@ -21,7 +21,7 @@ export class EducationComponent implements OnInit {
         if(obj.status !== '' && obj.component === 'education'){
           switch (obj.status) {
             case 'add' :
-              let new_Data = new Education('Degree', 'College Name', '', '');
+              let new_Data = new Education('', '', '', '');
               this.Education_data.push(new_Data)
               break;
             case 'remove' :

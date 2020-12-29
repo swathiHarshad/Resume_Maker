@@ -1,5 +1,5 @@
 <div>
-  <div class="heading Topic">Skill Set</div>
+  <div class="heading Topic cursor-default">Skill Set</div>
   <div id="SkillSet" class="wholeContainer">
     <div class="container" *ngFor='let data of skill; index as i; last as isLast; trackBy: toAddTracker '>
       <div class="curd">
@@ -8,10 +8,11 @@
 
       <div class="dis-relative">
         <div class="percentageCircle"
-          [ngStyle]="(!onclick)? getPercentageColor(data.Percentage): PercentageColor"></div>
+          [ngStyle]="getPercentageColor(data.Percentage)">
+        </div>
         <div class="percentage">
           <input type="text" name="" value='{{data.Percentage}}' class="percentInput" 
-            (input) = 'SkillPercent(i, $event.target.value)'>
+            (input) = 'SkillPercent(i, $event.target.value, $event)'>
           <span>%</span> 
         </div>
       </div>

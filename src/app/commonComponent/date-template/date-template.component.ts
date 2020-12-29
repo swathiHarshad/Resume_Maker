@@ -14,7 +14,6 @@ export class DateTemplateComponent implements OnInit {
   
 
   constructor(private curdOperation: curdServices) { 
-    console.log(this.component, this.index)
   }
   Date(when: string, event: any){
     let obj={

@@ -33,8 +33,13 @@ export class HoverDirectiveDirective {
         case 'menu':
           if(this.div !== null && this.div.classList.contains('display-block')){
             this.toHide()
-          } else
+            this.div.parentElement.classList.value = 'menuBarContainer'
+            console.log(this.div.parentElement.classList.value)
+          } else {
             this.toShow()
+            this.div.parentElement.classList.value = 'menuBarContainer show'
+            console.log(this.div.parentElement.classList.value)
+          }
           break;
         default:
           this.div = this.elRef.nativeElement.querySelector('.popup')

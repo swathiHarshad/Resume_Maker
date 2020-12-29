@@ -9,7 +9,7 @@ import { curdServices } from 'src/app/services/curd.services';
 export class ToggleBtnComponent implements OnInit {
   @Input() toShow: boolean
   @Input() comp : string
-  @Input() variables : object
+
   constructor(private curdOperation: curdServices) {
    }
    menuShortUpdate(event){

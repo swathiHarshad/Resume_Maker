@@ -9,18 +9,17 @@ import { curdServices } from './services/curd.services';
 export class AppComponent {
   title = 'Resume';
   variables = {
-    contactInfo: false ,
-    certificate: false,
-    Skills: false,
-    experence: false,
-    project: false,
-    education: false
+    contactInfo: true ,
+    certificate: true,
+    Skills: true,
+    experence: true,
+    project: true,
+    education: true
   } 
   constructor(private curOperation: curdServices){
     curOperation.menuupdate.subscribe((value)=>{
       this.variables[value] = !this.variables[value]
       console.log(this.variables[value])
-
     })
   }
 }

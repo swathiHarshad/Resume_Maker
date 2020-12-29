@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MenuBarComponent implements OnInit {
   popup: boolean = true
-  @Input() variables : object
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

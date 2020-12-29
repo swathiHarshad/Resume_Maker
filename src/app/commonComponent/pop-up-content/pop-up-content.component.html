@@ -1,12 +1,8 @@
 <div id="popUpContainer">
   <span class='pointer'></span>
-
   <div [ngSwitch] = comp>
   <div *ngSwitchCase = "'Certification'" style="padding: 10px;">
     {{content}}
-  </div>
-  <div *ngSwitchCase = "'Content-info'">
-    <app-contact-list [popup]=popup></app-contact-list>
   </div>
   <div class="content" *ngSwitchDefault>
     <p>Are you sure want to remove the {{comp}} column?</p>
