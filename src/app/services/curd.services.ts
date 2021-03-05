@@ -1,5 +1,5 @@
 import { EventEmitter } from '@angular/core'
-import { CurdOperationData } from '../variable.module';
+import { CurdOperationData, variable } from '../variable.module';
 
 export class curdServices {
 
@@ -7,4 +7,5 @@ export class curdServices {
   PopUpAction = new EventEmitter<string>();
   dateUpdate = new EventEmitter<object>();
   menuupdate = new EventEmitter<string>();
+  variableUpdate = new EventEmitter<object>();
 }

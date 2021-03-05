@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { curdServices } from '../services/curd.services';
-import { CurdOperationData, Project } from '../variable.module';
+import { CurdOperationData, Project, variable } from '../variable.module';
 
 @Component({
   selector: 'app-project',
@@ -12,9 +12,7 @@ export class ProjectComponent implements OnInit {
   @Input() index: Number
   comp= "project"
 
-  projectData: Project[] = [
-    new Project('', "", "", "", "", "", [])
-  ]
+  projectData = variable.projectData
 
   constructor(private curdOperation: curdServices) { 
     this.curdOperation.actionStatus.subscribe(

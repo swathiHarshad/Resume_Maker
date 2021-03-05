@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ContactInfo, contactInfoData } from 'src/app/variable.module';
+import { variable } from 'src/app/variable.module';
 
 @Component({
   selector: 'app-contact-list',
@@ -11,5 +11,5 @@ export class ContactListComponent implements OnInit {
 
   constructor() { }
   ngOnInit(): void {}
-  contactInfoData:ContactInfo[] = contactInfoData
+  contactInfoData = variable.contactInfoData
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Experience, CurdOperationData, DateUpdateObj } from '../variable.module';
+import { variable, CurdOperationData, DateUpdateObj, Experience } from '../variable.module';
 import { curdServices } from '../services/curd.services'
 
 @Component({
@@ -9,9 +9,7 @@ import { curdServices } from '../services/curd.services'
   styleUrls: ['./experience.component.less']
 })
 export class ExperienceComponent implements OnInit {
-  @Input() experience_data : Experience[] = [
-    new Experience('', '', "", '','',[]),
-  ]
+  @Input() experience_data = variable.experienceData
   
   @Input() last = false
   @Input() index: Number
