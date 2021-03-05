@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { Skill, CurdOperationData } from '../variable.module';
+import { variable, CurdOperationData, Skill } from '../variable.module';
 import { curdServices } from '../services/curd.services';
 
 @Component({
@@ -8,7 +8,7 @@ import { curdServices } from '../services/curd.services';
   styleUrls: ['./skill.component.less']
 })
 export class SkillComponent implements OnInit {
-  @Output() skill:Skill[] = [ new Skill('Skill Name', 100) ]
+  skill = variable.skill
   comp = "Skill Set"
   constructor(private curdOperation: curdServices) {
     this.curdOperation.actionStatus.subscribe(

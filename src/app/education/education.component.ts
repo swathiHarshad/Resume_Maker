@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Education, CurdOperationData, DateUpdateObj } from '../variable.module';
+import { Education, CurdOperationData, DateUpdateObj, variable } from '../variable.module';
 import { curdServices } from '../services/curd.services';
 
 @Component({
@@ -9,9 +9,7 @@ import { curdServices } from '../services/curd.services';
 })
 export class EducationComponent implements OnInit {
   
-  @Input() Education_data : Education[] =[
-    new Education ('', '', '', '')
-  ]
+  Education_data = variable.EducationData
 
   comp = "Educational" 
 
